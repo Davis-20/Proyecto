@@ -2,21 +2,21 @@
 package com.proyecto.animales;
 
 public abstract class Animal {
-    private int espacio;
+    private double espacio;
     private int vida;
     private String nombre;
 
-    public Animal(int espacio, int vida, String nombre) {
+    public Animal(double espacio, int vida, String nombre) {
         this.espacio = espacio;
         this.vida = vida;
         this.nombre = nombre;
     }
 
-    public int getEspacio() {
+    public double getEspacio() {
         return espacio;
     }
 
-    public void setEspacio(int espacio) {
+    public void setEspacio(double espacio) {
         this.espacio = espacio;
     }
 

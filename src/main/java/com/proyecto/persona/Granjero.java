@@ -9,9 +9,9 @@ public class Granjero {
     private int vida;
     private String nombre;
 
-    public Granjero(int oro, int vida, String nombre) {
-        this.oro = oro;
-        this.vida = vida;
+    public Granjero(String nombre) {
+        this.oro = 500; //definimos el oro inicial
+        this.vida = 100; //definimos la vida inicial
         this.nombre = nombre;
     }
 
@@ -37,6 +37,11 @@ public class Granjero {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Granjero{" + "oro=" + oro + ", vida=" + vida + ", nombre=" + nombre + '}';
     }
 
    

@@ -3,14 +3,24 @@ package com.proyecto.plantas;
 
 
 public abstract class Planta  {
+    protected double precio;
+    protected int vida;
+    protected String nombre;
 
-    private int vida;
-    private String nombre;
-
-    public Planta(int vida, String nombre) {
+    public Planta(double precio, int vida, String nombre) {
+        this.precio = precio;
         this.vida = vida;
         this.nombre = nombre;
     }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
 
     public int getVida() {
         return vida;
@@ -30,7 +40,9 @@ public abstract class Planta  {
 
     @Override
     public String toString() {
-        return "Planta{" + "vida=" + vida + ", nombre=" + nombre + '}';
+        return "Planta{" + "precio=" + precio + ", vida=" + vida + ", nombre=" + nombre + '}';
     }
+
+  
     
 }
