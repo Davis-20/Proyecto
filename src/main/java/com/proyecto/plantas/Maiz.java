@@ -1,14 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.proyecto.plantas;
 
-/**
- *
- * @author davis
- */
-public class Maiz {
+
+public class Maiz extends Planta{
+
+    public Maiz(double precio, int vida, String nombre) {
+        super(precio, vida, nombre);
+    }
     
 }

@@ -1,14 +1,26 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.proyecto.suelo;
 
-/**
- *
- * @author davis
- */
-public class Suelo {
+
+public abstract class Suelo {
+    private String nombre;
+
+    public Suelo(String nombre) {
+        this.nombre = nombre;
+    }
     
+    public abstract String descripcion();
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return "Suelo{" + "nombre=" + nombre + '}';
+    }
 }
