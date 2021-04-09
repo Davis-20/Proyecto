@@ -3,24 +3,29 @@ package com.proyecto.suelo;
 
 
 public abstract class Suelo {
-    private String nombre;
+    private TipoSuelo tipoSuelo;
+    private SuperficieJlabel superficieJlabel;
 
-    public Suelo(String nombre) {
-        this.nombre = nombre;
+    public Suelo(TipoSuelo tipoSuelo, SuperficieJlabel superficieJlabel) {
+        this.tipoSuelo = tipoSuelo;
+        this.superficieJlabel = superficieJlabel;
+    }
+
+    public TipoSuelo getTipoSuelo() {
+        return tipoSuelo;
+    }
+
+    public void setTipoSuelo(TipoSuelo tipoSuelo) {
+        this.tipoSuelo = tipoSuelo;
+    }
+
+    public SuperficieJlabel getSuperficieJlabel() {
+        return superficieJlabel;
+    }
+
+    public void setSuperficieJlabel(SuperficieJlabel superficieJlabel) {
+        this.superficieJlabel = superficieJlabel;
     }
     
-    public abstract String descripcion();
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    @Override
-    public String toString() {
-        return "Suelo{" + "nombre=" + nombre + '}';
-    }
+    
 }

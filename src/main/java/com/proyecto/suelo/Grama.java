@@ -2,15 +2,32 @@
 package com.proyecto.suelo;
 
 
-public class Grama extends Suelo{
+public class Grama extends TipoSuelo{
+    private int tiempoCrecerPlanta;
+    private boolean esParcela;
 
-    public Grama(String nombre) {
+    public Grama(int tiempoCrecerPlanta, boolean esParcela, String nombre) {
         super(nombre);
+        this.tiempoCrecerPlanta = tiempoCrecerPlanta;
+        this.esParcela = esParcela;
     }
 
-    @Override
-    public String descripcion() {
-        return "Permite la siembra y permite ser parte de parcelas para la crianza de animales"+ this;
+    
+
+    public int getTiempoCrecerPlanta() {
+        return tiempoCrecerPlanta;
+    }
+
+    public void setTiempoCrecerPlanta(int tiempoCrecerPlanta) {
+        this.tiempoCrecerPlanta = tiempoCrecerPlanta;
+    }
+
+    public boolean isEsParcela() {
+        return esParcela;
+    }
+
+    public void setEsParcela(boolean esParcela) {
+        this.esParcela = esParcela;
     }
     
 }
