@@ -52,9 +52,22 @@ public class CreadorSuelo {
                 
                 
                 if (i <5 && j<5){ //Genero los diferentes tipo de suelo, Agua, Desierto, Grama para un area 5*5
-                    int n = (int) (Math.random() * (3 - 0)) + 0;
-                    superficieSuelo = new Suelo(suelos[n], nuevoJLabel);
+                    //Grama 40 Agua 35  Desierto 25
+                    int n = (int) (Math.random() * (100 - 0)) + 0;
+                    if(n<40){ //Grama
+                        superficieSuelo = new Suelo(suelos[0], nuevoJLabel);
                     suelo[i][j] = superficieSuelo;
+                    }
+                    else if (n>=40 && n<=75) { //Agua
+                        superficieSuelo = new Suelo(suelos[1], nuevoJLabel);
+                    suelo[i][j] = superficieSuelo;
+                    }
+                    else{ //Desierto
+                        superficieSuelo = new Suelo(suelos[2], nuevoJLabel);
+                    suelo[i][j] = superficieSuelo;
+                    }
+                    //superficieSuelo = new Suelo(suelos[n], nuevoJLabel);
+                    //suelo[i][j] = superficieSuelo;
                     //System.out.println(suelos[n].getNombre());
                 }
                 else{ //se generara suelo vacio a partir del 5*5
