@@ -9,9 +9,9 @@ package com.proyecto.suelo;
  *
  * @author davis
  */
-public class Vacio extends TipoSuelo {
+public class SueloVacio extends TipoSuelo {
 
-    public Vacio(String nombre) {
+    public SueloVacio(String nombre) {
         super(nombre);
     }
     
