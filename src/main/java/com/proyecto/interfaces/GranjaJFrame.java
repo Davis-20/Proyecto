@@ -3,19 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.manejadores;
+package com.proyecto.interfaces;
+
+import com.proyecto.manejadores.ManejadorSuelo;
+import com.proyecto.suelo.Granja;
+import java.awt.GridLayout;
+import javax.swing.WindowConstants;
 
 /**
  *
  * @author davis
  */
-public class GranjaJFrame extends javax.swing.JFrame {
 
+public class GranjaJFrame extends javax.swing.JFrame {
+private ManejadorSuelo manejadorSuelo;
+private Granja granja;
     /**
      * Creates new form SueloJFrame
      */
     public GranjaJFrame() {
         initComponents();
+        this.setTitle("Granja");
+        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.sueloPanel.setLayout(new GridLayout(5,5));
+
+        this.granja = new Granja();
+        manejadorSuelo = new ManejadorSuelo(sueloPanel, granja.getSuelo());
     }
 
     /**
