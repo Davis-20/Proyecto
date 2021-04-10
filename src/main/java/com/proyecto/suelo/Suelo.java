@@ -1,14 +1,21 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.suelo;
 
-
-public abstract class Suelo {
+/**
+ *
+ * @author davis
+ */
+public class Suelo {
     private TipoSuelo tipoSuelo;
-    private SuperficieJlabel superficieJlabel;
+    private SuperficieJLabel superficieJLabel;
 
-    public Suelo(TipoSuelo tipoSuelo, SuperficieJlabel superficieJlabel) {
+    public  Suelo(TipoSuelo tipoSuelo, SuperficieJLabel superficieJLabel) {
         this.tipoSuelo = tipoSuelo;
-        this.superficieJlabel = superficieJlabel;
+        this.superficieJLabel = superficieJLabel;
     }
 
     public TipoSuelo getTipoSuelo() {
@@ -19,13 +26,16 @@ public abstract class Suelo {
         this.tipoSuelo = tipoSuelo;
     }
 
-    public SuperficieJlabel getSuperficieJlabel() {
-        return superficieJlabel;
+    public SuperficieJLabel getSuperficieJLabel() {
+        return superficieJLabel;
     }
 
-    public void setSuperficieJlabel(SuperficieJlabel superficieJlabel) {
-        this.superficieJlabel = superficieJlabel;
+    public void setSuperficieJlabel(SuperficieJLabel superficieJLabel) {
+        this.superficieJLabel = superficieJLabel;
     }
+    
+    
+    
     
     
 }

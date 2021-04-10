@@ -7,17 +7,25 @@ package com.proyecto.suelo;
 
 import javax.swing.JLabel;
 
-
 /**
  *
  * @author davis
  */
-public class SuperficieJlabel extends JLabel{
-    private int numeroColumnas;
+public class SuperficieJLabel extends JLabel{
     private int numeroFilas;
+    private int numeroColumnas;
 
-    public SuperficieJlabel(int numeroColumnas, int numeroFilas) {
+    public SuperficieJLabel(int numeroFilas, int numeroColumnas, String texto) {
+        super(texto);  //va a ser el texto que le pasemos por parametro al jlabel
         this.numeroColumnas = numeroColumnas;
+        this.numeroFilas = numeroFilas;
+    }
+
+    public int getNumeroFilas() {
+        return numeroFilas;
+    }
+
+    public void setNumeroFilas(int numeroFilas) {
         this.numeroFilas = numeroFilas;
     }
 
@@ -27,14 +35,6 @@ public class SuperficieJlabel extends JLabel{
 
     public void setNumeroColumnas(int numeroColumnas) {
         this.numeroColumnas = numeroColumnas;
-    }
-
-    public int getNumeroFilas() {
-        return numeroFilas;
-    }
-
-    public void setNumeroFilas(int numeroFilas) {
-        this.numeroFilas = numeroFilas;
     }
     
     

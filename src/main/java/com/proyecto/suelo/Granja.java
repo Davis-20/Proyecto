@@ -5,10 +5,27 @@
  */
 package com.proyecto.suelo;
 
+import com.proyecto.manejadores.CreadorSuelo;
+
 /**
  *
  * @author davis
  */
 public class Granja {
+    private Suelo[][] suelo;
+    public Granja(){
+        this.suelo = CreadorSuelo.CreadorSueloicial();
+    }
+
+    public Suelo[][] getSuelo() {
+        return suelo;
+    }
+
+    public void setSuelo(Suelo[][] suelo) {
+        this.suelo = suelo;
+    }
+    
+    
+    
     
 }

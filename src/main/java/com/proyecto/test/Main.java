@@ -1,10 +1,11 @@
 
 package com.proyecto.test;
+import com.proyecto.interfaces.GranjaJFrame;
 
 
-public class Ejecutable {
+public class Main {
     public static void main(String[] args) {
-        GranjaFrame nuevaGranja = new GranjaFrame();
+        GranjaJFrame nuevaGranja = new GranjaJFrame();
         nuevaGranja.setVisible(true);
     }
 }

@@ -1,25 +1,30 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.proyecto.suelo;
 
-
+/**
+ *
+ * @author davis
+ */
 public class Grama extends TipoSuelo{
-    private int tiempoCrecerPlanta;
+    private int diasEnCrecer;
     private boolean esParcela;
-
-    public Grama(int tiempoCrecerPlanta, boolean esParcela, String nombre) {
+    
+    public Grama(String nombre, int diasEnCrecer, boolean esParcela){
         super(nombre);
-        this.tiempoCrecerPlanta = tiempoCrecerPlanta;
+        this.diasEnCrecer = diasEnCrecer;
         this.esParcela = esParcela;
     }
 
-    
-
-    public int getTiempoCrecerPlanta() {
-        return tiempoCrecerPlanta;
+    public int getDiasEnCrecer() {
+        return diasEnCrecer;
     }
 
-    public void setTiempoCrecerPlanta(int tiempoCrecerPlanta) {
-        this.tiempoCrecerPlanta = tiempoCrecerPlanta;
+    public void setDiasEnCrecer(int diasEnCrecer) {
+        this.diasEnCrecer = diasEnCrecer;
     }
 
     public boolean isEsParcela() {
