@@ -9,6 +9,8 @@ import com.proyecto.manejadores.ManejadorSuelo;
 import com.proyecto.persona.Granjero;
 import com.proyecto.suelo.Granja;
 import java.awt.GridLayout;
+import java.util.HashSet;
+import java.util.Set;
 import javax.swing.WindowConstants;
 
 /**
@@ -130,6 +132,10 @@ private Granjero granjero;
     //Agregar metodo para tienda
     private void tiendaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tiendaLabelMouseClicked
         System.out.println("Dirigido a la tienda");// Aqui iran los metodos para la tienda
+        int oroNuevo = granjero.getOro() - 5 ;
+        System.out.println("Te desconte 5 de oro");
+        granjero.setOro(oroNuevo);
+        
     }//GEN-LAST:event_tiendaLabelMouseClicked
 
     private void oroLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oroLabelMouseClicked
