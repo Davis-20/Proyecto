@@ -1,9 +1,12 @@
 
 package com.proyecto.persona;
 
-import java.util.Set;
+
+import com.proyecto.interfaces.BotonJLabel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 
 
 
@@ -13,11 +16,16 @@ public class Granjero implements Runnable{
     private int oro;
     private int vida;
     private String nombre;
+    private BotonJLabel botonJLabel;
+    private BotonJLabel botonJLabel1;
 
-    public Granjero(String nombre) {
+    public Granjero(String nombre, BotonJLabel botonJLabel, BotonJLabel botonJLabel1) {
         this.oro = 500; //definimos el oro inicial
         this.vida = 100; //definimos la vida inicial
         this.nombre = nombre;
+        this.botonJLabel = botonJLabel;
+        this.botonJLabel1 = botonJLabel1;
+        
     }
 
     public int getOro() {
@@ -43,7 +51,10 @@ public class Granjero implements Runnable{
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
+    
+    
+    
+    
     @Override
     public String toString() {
         return "Granjero{" + "oro=" + oro + ", vida=" + vida + ", nombre=" + nombre + '}';
@@ -54,14 +65,33 @@ public class Granjero implements Runnable{
         while(getVida()!=0){
             int vidaNueva = getVida() - 1 ;
             setVida(vidaNueva);
+            getBotonJLabel().setText("Vida: \n\n"+getVida());
+            getBotonJLabel1().setText("Oro: \n\n"+getOro());
             try {
                 Thread.sleep(1000);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Granjero.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
+        
         }
+        JOptionPane.showMessageDialog(null,"Moriste");
     
+    }
+
+    public BotonJLabel getBotonJLabel() {
+        return botonJLabel;
+    }
+
+    public void setBotonJLabel(BotonJLabel botonJLabel) {
+        this.botonJLabel = botonJLabel;
+    }
+
+    public BotonJLabel getBotonJLabel1() {
+        return botonJLabel1;
+    }
+
+    public void setBotonJLabel1(BotonJLabel botonJLabel1) {
+        this.botonJLabel1 = botonJLabel1;
     }
     
 

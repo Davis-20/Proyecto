@@ -30,12 +30,10 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="vidaLabel" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="tiendaLabel" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
-                  <Component id="oroLabel" min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="nombreLabel" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="sueloPanel" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -47,11 +45,7 @@
               <Component id="nombreLabel" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="tiendaLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="113" max="32767" attributes="0"/>
-              <Component id="vidaLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="oroLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+              <EmptySpace min="47" pref="225" max="32767" attributes="0"/>
           </Group>
           <Component id="sueloPanel" max="32767" attributes="0"/>
       </Group>
@@ -79,22 +73,6 @@
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tiendaLabelMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="vidaLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Vida "/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="vidaLabelMouseClicked"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="oroLabel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Oro"/>
-      </Properties>
-      <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="oroLabelMouseClicked"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="nombreLabel">

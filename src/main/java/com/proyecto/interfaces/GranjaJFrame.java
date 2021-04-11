@@ -9,8 +9,6 @@ import com.proyecto.manejadores.ManejadorSuelo;
 import com.proyecto.persona.Granjero;
 import com.proyecto.suelo.Granja;
 import java.awt.GridLayout;
-import java.util.HashSet;
-import java.util.Set;
 import javax.swing.WindowConstants;
 
 /**
@@ -24,6 +22,7 @@ private Granja granja;
 private int filas ;
 private int columnas ;
 private Granjero granjero;
+
     /**
      * Creates new form SueloJFrame
      */
@@ -35,10 +34,9 @@ private Granjero granjero;
         this.setTitle("Granja");
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.sueloPanel.setLayout(new GridLayout(filas,columnas));
-
+        
         this.granja = new Granja(filas,columnas);
         manejadorSuelo = new ManejadorSuelo(sueloPanel, granja.getSuelo(), filas,columnas); //filas 5 columnas 5
-        oroLabel.setText("Oro: \n" + granjero.getOro());
         nombreLabel.setText(granjero.getNombre());
     }
 
@@ -53,8 +51,6 @@ private Granjero granjero;
 
         sueloPanel = new javax.swing.JPanel();
         tiendaLabel = new javax.swing.JLabel();
-        vidaLabel = new javax.swing.JLabel();
-        oroLabel = new javax.swing.JLabel();
         nombreLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,20 +75,6 @@ private Granjero granjero;
             }
         });
 
-        vidaLabel.setText("Vida ");
-        vidaLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                vidaLabelMouseClicked(evt);
-            }
-        });
-
-        oroLabel.setText("Oro");
-        oroLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                oroLabelMouseClicked(evt);
-            }
-        });
-
         nombreLabel.setText("Nick");
         nombreLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,11 +89,9 @@ private Granjero granjero;
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(vidaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tiendaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(oroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -121,11 +101,7 @@ private Granjero granjero;
                 .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tiendaLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(vidaLabel)
-                .addGap(33, 33, 33)
-                .addComponent(oroLabel)
-                .addGap(47, 47, 47))
+                .addGap(47, 225, Short.MAX_VALUE))
             .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -144,22 +120,11 @@ private Granjero granjero;
         
     }//GEN-LAST:event_tiendaLabelMouseClicked
 
-    private void oroLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oroLabelMouseClicked
-     
-        //System.out.println("Oro:" +(granjero.getOro()+ granjero.getOro()));
-        oroLabel.setText("Oro: \n" + granjero.getOro());
-    }//GEN-LAST:event_oroLabelMouseClicked
-
     
     
     private void nombreLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreLabelMouseClicked
               // TODO add your handling code here:
     }//GEN-LAST:event_nombreLabelMouseClicked
-
-    private void vidaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vidaLabelMouseClicked
-        // TODO add your handling code here:
-        vidaLabel.setText("V"+granjero.getVida());
-    }//GEN-LAST:event_vidaLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -169,9 +134,7 @@ private Granjero granjero;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel nombreLabel;
-    private javax.swing.JLabel oroLabel;
     private javax.swing.JPanel sueloPanel;
     private javax.swing.JLabel tiendaLabel;
-    private javax.swing.JLabel vidaLabel;
     // End of variables declaration//GEN-END:variables
 }
