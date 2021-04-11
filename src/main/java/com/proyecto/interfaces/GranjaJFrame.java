@@ -48,6 +48,7 @@ private int columnas ;
         tiendaLabel = new javax.swing.JLabel();
         vidaLabel = new javax.swing.JLabel();
         oroLabel = new javax.swing.JLabel();
+        nombreLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(700, 500));
@@ -75,6 +76,8 @@ private int columnas ;
 
         oroLabel.setText("Oro");
 
+        nombreLabel.setText("Nick");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -84,14 +87,17 @@ private int columnas ;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vidaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tiendaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(oroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(oroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addContainerGap()
+                .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(tiendaLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addComponent(vidaLabel)
@@ -104,8 +110,11 @@ private int columnas ;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
+    //Agregar metodo para tienda
     private void tiendaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tiendaLabelMouseClicked
-        System.out.println("Dirigido a la tienda");// TODO add your handling code here:
+        System.out.println("Dirigido a la tienda");// Aqui iran los metodos para la tienda
     }//GEN-LAST:event_tiendaLabelMouseClicked
 
     /**
@@ -115,6 +124,7 @@ private int columnas ;
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel oroLabel;
     private javax.swing.JPanel sueloPanel;
     private javax.swing.JLabel tiendaLabel;
