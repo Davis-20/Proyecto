@@ -1,45 +1,48 @@
-//
-//package com.proyecto.test;
-//
-//import com.proyecto.animales.*;
-//import com.proyecto.persona.Granjero;
-//import com.proyecto.plantas.*;
-//import com.proyecto.suelo.*;
-//
-//public class Juego {
-//        
-//    
-//    
-//    
-//    
-//    
-//    public void iniciarJuego(){
-//        Animal gallina1= new Gallina(0.5,30,"Gallina1");
-//        Animal vaca1 = new Vaca(1,100,"Vaca1");
-//        Granjero granjero1 = new Granjero("Davis");
-//        Planta maiz1 = new Maiz(50,35,"maiz1");
-//        Suelo agua1 = new Agua("agua1");
-//        imprimeSuelo(agua1);
-//        imprimePlanta(maiz1);
-//        imprimeAnimal(gallina1);
-//        imprimeAnimal(vaca1);
-//        imprimeGranjero(granjero1);
-//    }
-//    
-//    
-//    
-//    
-//    
-//    public static void imprimeAnimal(Animal animal){
-//        System.out.println(animal);
-//    }
-//    public static void imprimePlanta(Planta planta){
-//        System.out.println(planta);
-//    }
-//    public static void imprimeGranjero(Granjero granjero){
-//        System.out.println(granjero);
-//    }
-//    public static void imprimeSuelo(Suelo suelo){
-//        System.out.println(suelo.descripcion());
-//    }
-//}
+
+package com.proyecto.test;
+
+import com.proyecto.animales.*;
+import com.proyecto.interfaces.BotonJLabel;
+import com.proyecto.interfaces.GranjaJFrame;
+import com.proyecto.persona.Granjero;
+import com.proyecto.plantas.*;
+import com.proyecto.suelo.*;
+import javax.swing.JOptionPane;
+
+public class Juego {
+        
+    
+    
+    
+    
+    
+    public void iniciarJuego(){
+        BotonJLabel botonVida = new BotonJLabel("Vida");
+        BotonJLabel botonOro = new BotonJLabel("Oro");
+        Granjero granjero = new Granjero(JOptionPane.showInputDialog("Ingresa tu Nick"),botonVida,botonOro);
+        
+        GranjaJFrame nuevaGranja = new GranjaJFrame(7,5,granjero);
+        
+        nuevaGranja.setVisible(true);
+        
+        
+        
+        //boton1.setLocation(0, 0);
+        nuevaGranja.add(botonVida).setBounds(10, 350, 50, 50); //Boton de vida
+        nuevaGranja.add(botonOro).setBounds(10, 370, 50, 50); //Boton de vida
+        Thread t = new Thread(granjero);
+        t.start();
+        
+        
+        //animales
+        Gallina gallina1 = new Gallina(1, 20, "Gallileta");
+        Thread a = new Thread(gallina1);
+        a.start();
+    }
+    
+    
+    
+    
+    
+    
+}

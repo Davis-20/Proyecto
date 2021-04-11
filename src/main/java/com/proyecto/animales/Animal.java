@@ -1,7 +1,7 @@
 
 package com.proyecto.animales;
 
-public abstract class Animal {
+public abstract class Animal{
     private double espacio;
     private int vida;
     private String nombre;
