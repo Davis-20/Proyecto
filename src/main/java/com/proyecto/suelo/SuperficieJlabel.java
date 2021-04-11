@@ -11,6 +11,7 @@ import javax.swing.JLabel;
  *
  * @author davis
  */
+//estamos creando un label, asignandole un texto y la posicion en fila, columna
 public class SuperficieJLabel extends JLabel{
     private int numeroFilas;
     private int numeroColumnas;
@@ -19,6 +20,7 @@ public class SuperficieJLabel extends JLabel{
         super(texto);  //va a ser el texto que le pasemos por parametro al jlabel
         this.numeroColumnas = numeroColumnas;
         this.numeroFilas = numeroFilas;
+        
     }
 
     public int getNumeroFilas() {

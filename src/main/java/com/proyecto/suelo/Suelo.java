@@ -5,6 +5,8 @@
  */
 package com.proyecto.suelo;
 
+import java.awt.Color;
+
 /**
  *
  * @author davis
@@ -12,10 +14,12 @@ package com.proyecto.suelo;
 public class Suelo {
     private TipoSuelo tipoSuelo;
     private SuperficieJLabel superficieJLabel;
+ 
 
     public  Suelo(TipoSuelo tipoSuelo, SuperficieJLabel superficieJLabel) {
         this.tipoSuelo = tipoSuelo;
         this.superficieJLabel = superficieJLabel;
+        
     }
 
     public TipoSuelo getTipoSuelo() {
@@ -34,7 +38,7 @@ public class Suelo {
         this.superficieJLabel = superficieJLabel;
     }
     
-    
+     
     
     
     

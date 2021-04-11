@@ -13,8 +13,8 @@ import com.proyecto.manejadores.CreadorSuelo;
  */
 public class Granja {
     private Suelo[][] suelo;
-    public Granja(){
-        this.suelo = CreadorSuelo.CreadorSueloicial();
+    public Granja(int filas, int columnas){
+        this.suelo = CreadorSuelo.CreadorSueloicial(filas, columnas);
     }
 
     public Suelo[][] getSuelo() {

@@ -18,17 +18,21 @@ import javax.swing.WindowConstants;
 public class GranjaJFrame extends javax.swing.JFrame {
 private ManejadorSuelo manejadorSuelo;
 private Granja granja;
+private int filas ;
+private int columnas ;
     /**
      * Creates new form SueloJFrame
      */
-    public GranjaJFrame() {
+    public GranjaJFrame(int filas, int columnas) {
+        this.filas = filas;
+        this.columnas = columnas;
         initComponents();
         this.setTitle("Granja");
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.sueloPanel.setLayout(new GridLayout(5,5));
+        this.sueloPanel.setLayout(new GridLayout(filas,columnas));
 
-        this.granja = new Granja();
-        manejadorSuelo = new ManejadorSuelo(sueloPanel, granja.getSuelo());
+        this.granja = new Granja(filas,columnas);
+        manejadorSuelo = new ManejadorSuelo(sueloPanel, granja.getSuelo(), filas,columnas); //filas 5 columnas 5
     }
 
     /**
@@ -41,33 +45,68 @@ private Granja granja;
     private void initComponents() {
 
         sueloPanel = new javax.swing.JPanel();
+        tiendaLabel = new javax.swing.JLabel();
+        vidaLabel = new javax.swing.JLabel();
+        oroLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(700, 500));
+        setResizable(false);
 
         javax.swing.GroupLayout sueloPanelLayout = new javax.swing.GroupLayout(sueloPanel);
         sueloPanel.setLayout(sueloPanelLayout);
         sueloPanelLayout.setHorizontalGroup(
             sueloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 330, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
         sueloPanelLayout.setVerticalGroup(
             sueloPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        tiendaLabel.setText("Tienda");
+        tiendaLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tiendaLabelMouseClicked(evt);
+            }
+        });
+
+        vidaLabel.setText("Vida ");
+
+        oroLabel.setText("Oro");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(sueloPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(vidaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tiendaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(tiendaLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
+                .addComponent(vidaLabel)
+                .addGap(33, 33, 33)
+                .addComponent(oroLabel)
+                .addGap(47, 47, 47))
             .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void tiendaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tiendaLabelMouseClicked
+        System.out.println("Dirigido a la tienda");// TODO add your handling code here:
+    }//GEN-LAST:event_tiendaLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -76,6 +115,9 @@ private Granja granja;
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel oroLabel;
     private javax.swing.JPanel sueloPanel;
+    private javax.swing.JLabel tiendaLabel;
+    private javax.swing.JLabel vidaLabel;
     // End of variables declaration//GEN-END:variables
 }
