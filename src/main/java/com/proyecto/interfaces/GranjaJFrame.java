@@ -6,6 +6,7 @@
 package com.proyecto.interfaces;
 
 import com.proyecto.manejadores.ManejadorSuelo;
+import com.proyecto.persona.Granjero;
 import com.proyecto.suelo.Granja;
 import java.awt.GridLayout;
 import javax.swing.WindowConstants;
@@ -20,10 +21,12 @@ private ManejadorSuelo manejadorSuelo;
 private Granja granja;
 private int filas ;
 private int columnas ;
+private Granjero granjero;
     /**
      * Creates new form SueloJFrame
      */
-    public GranjaJFrame(int filas, int columnas) {
+    public GranjaJFrame(int filas, int columnas, Granjero granjero) {
+        this.granjero = granjero;
         this.filas = filas;
         this.columnas = columnas;
         initComponents();
@@ -33,6 +36,8 @@ private int columnas ;
 
         this.granja = new Granja(filas,columnas);
         manejadorSuelo = new ManejadorSuelo(sueloPanel, granja.getSuelo(), filas,columnas); //filas 5 columnas 5
+        oroLabel.setText("Oro: \n" + granjero.getOro());
+        nombreLabel.setText(granjero.getNombre());
     }
 
     /**
@@ -75,8 +80,18 @@ private int columnas ;
         vidaLabel.setText("Vida ");
 
         oroLabel.setText("Oro");
+        oroLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                oroLabelMouseClicked(evt);
+            }
+        });
 
         nombreLabel.setText("Nick");
+        nombreLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nombreLabelMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,6 +131,18 @@ private int columnas ;
     private void tiendaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tiendaLabelMouseClicked
         System.out.println("Dirigido a la tienda");// Aqui iran los metodos para la tienda
     }//GEN-LAST:event_tiendaLabelMouseClicked
+
+    private void oroLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oroLabelMouseClicked
+     
+        //System.out.println("Oro:" +(granjero.getOro()+ granjero.getOro()));
+        oroLabel.setText("Oro: \n" + granjero.getOro());
+    }//GEN-LAST:event_oroLabelMouseClicked
+
+    
+    
+    private void nombreLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreLabelMouseClicked
+              // TODO add your handling code here:
+    }//GEN-LAST:event_nombreLabelMouseClicked
 
     /**
      * @param args the command line arguments

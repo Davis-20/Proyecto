@@ -90,11 +90,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Oro"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="oroLabelMouseClicked"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="nombreLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nick"/>
       </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nombreLabelMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

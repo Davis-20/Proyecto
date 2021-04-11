@@ -7,7 +7,6 @@ package com.proyecto.manejadores;
 
 import com.proyecto.suelo.*;
 import java.awt.Color;
-import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 
@@ -48,48 +47,6 @@ private static int contDesierto =0;
                     }
                 
                 });
-                //3 tipos de suelo
-//                if (i <5 && j<5){ //Genero los diferentes tipo de suelo, Agua, Desierto, Grama para un area 5*5
-//
-//                    TipoSuelo[][] suelos = new TipoSuelo[5][5];
-//                    for (int k = 0; k < 5; k++) {
-//                        for (int l = 0; l < 5; l++) {
-//                            boolean seCreo = false;
-//                            //Grama 40 Agua 35  Desierto 25
-//                            
-//                            while (seCreo==false) {                                
-//                                int n = (int) (Math.random() * (3 - 0)) + 0;
-//                                TipoSuelo [] suelosP = new TipoSuelo[3];
-//                                suelosP[0] = new Grama("Grama", 5, true);
-//                                suelosP[1] = new Agua("Agua");
-//                                suelosP[2] = new Desierto("Desierto");
-//
-//                                if(suelosP[n].getNombre().equals("Grama") && contGrama<10){
-//                                    suelos[k][l] = new Grama("Grama", 3, true);
-//                                    superficieSuelo  = new Suelo(suelos[k][l], nuevoJLabel);
-//                                    suelo[i][j] = superficieSuelo;
-//                                    contGrama++;
-//                                    seCreo = true;
-//                                }
-//                            }
-//                            
-//                            
-////                            suelos[k][l] = new Grama("Grama", 3, true);
-////                            superficieSuelo  = new Suelo(suelos[k][l], nuevoJLabel);
-////                            suelo[i][j] = superficieSuelo;
-////                            String nombre = suelo[i][j].getTipoSuelo().getNombre();
-//
-//                        }
-//                    }
-//                }
-//                
-//                else{ //se generara suelo vacio a partir del 5*5
-//                    SueloVacio sueloVacio = new SueloVacio("Vacio");
-//                    superficieSuelo = new Suelo(sueloVacio, nuevoJLabel);
-//                    suelo[i][j] = superficieSuelo;
-//                    //System.out.println(sueloVacio.getNombre());
-//                
-//                }
                 
                //3 tipos de suelo
                 TipoSuelo [] suelos = new TipoSuelo[3];
@@ -136,17 +93,11 @@ private static int contDesierto =0;
                             break;
                         }
                     }
-                        
-                    //superficieSuelo = new Suelo(suelos[n], nuevoJLabel);
-                    //suelo[i][j] = superficieSuelo;
-                    //System.out.println(suelos[n].getNombre());
                 }
                 else{ //se generara suelo vacio a partir del 5*5
                     SueloVacio sueloVacio = new SueloVacio("Vacio");
                     superficieSuelo = new Suelo(sueloVacio, nuevoJLabel);
-                    suelo[i][j] = superficieSuelo;
-                    //System.out.println(sueloVacio.getNombre());
-                
+                    suelo[i][j] = superficieSuelo;                
                 }
             }
         }
