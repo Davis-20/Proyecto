@@ -1,10 +1,15 @@
 
 package com.proyecto.persona;
 
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
-public class Granjero {
+
+
+public class Granjero implements Runnable{
     private int oro;
     private int vida;
     private String nombre;
@@ -44,7 +49,20 @@ public class Granjero {
         return "Granjero{" + "oro=" + oro + ", vida=" + vida + ", nombre=" + nombre + '}';
     }
 
-   
+    @Override
+    public void run(){
+        while(getVida()!=0){
+            int vidaNueva = getVida() - 1 ;
+            setVida(vidaNueva);
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Granjero.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+    
+    }
     
 
 

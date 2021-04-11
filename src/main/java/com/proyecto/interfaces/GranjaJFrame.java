@@ -80,6 +80,11 @@ private Granjero granjero;
         });
 
         vidaLabel.setText("Vida ");
+        vidaLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vidaLabelMouseClicked(evt);
+            }
+        });
 
         oroLabel.setText("Oro");
         oroLabel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -136,6 +141,7 @@ private Granjero granjero;
         System.out.println("Te desconte 5 de oro");
         granjero.setOro(oroNuevo);
         
+        
     }//GEN-LAST:event_tiendaLabelMouseClicked
 
     private void oroLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_oroLabelMouseClicked
@@ -149,6 +155,11 @@ private Granjero granjero;
     private void nombreLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreLabelMouseClicked
               // TODO add your handling code here:
     }//GEN-LAST:event_nombreLabelMouseClicked
+
+    private void vidaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vidaLabelMouseClicked
+        // TODO add your handling code here:
+        vidaLabel.setText("V"+granjero.getVida());
+    }//GEN-LAST:event_vidaLabelMouseClicked
 
     /**
      * @param args the command line arguments

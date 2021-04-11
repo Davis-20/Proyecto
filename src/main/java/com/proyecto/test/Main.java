@@ -10,6 +10,7 @@ public class Main {
         Granjero granjero = new Granjero(JOptionPane.showInputDialog("Ingresa tu Nick"));
         GranjaJFrame nuevaGranja = new GranjaJFrame(7,5,granjero);
         nuevaGranja.setVisible(true);
-        
+        Thread t = new Thread(granjero);
+        t.start();
     }
 }
