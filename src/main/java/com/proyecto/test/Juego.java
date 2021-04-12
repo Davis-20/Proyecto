@@ -42,7 +42,7 @@ public class Juego {
         
         //Labels con la informacion del granjero
         nuevaGranja.add(botonVida).setBounds(10, 350, 50, 50); //Boton de vida
-        nuevaGranja.add(botonOro).setBounds(10, 370, 50, 50); //Boton de vida
+        nuevaGranja.add(botonOro).setBounds(10, 370, 50, 50); //Boton de oro
         Thread t = new Thread(granjero);
         t.start();
         

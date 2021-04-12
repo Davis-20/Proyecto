@@ -5,16 +5,20 @@
  */
 package com.proyecto.interfaces;
 
+import com.proyecto.persona.Granjero;
+
 /**
  * Clase mercado
  * @author davis
  */
 public class MercadoJFrame extends javax.swing.JFrame {
-
+private Granjero granjero;
     /**
-     * Creates new form MercadoJFrame
+     * Constructor del mercado
+     * @param granjero pasamos el objeto granjero
      */
-    public MercadoJFrame() {
+    public MercadoJFrame(Granjero granjero) {
+        this.granjero = granjero;
         initComponents();
         
     }
@@ -33,7 +37,12 @@ public class MercadoJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Prueba");
+        jLabel1.setText("Descuento de 10 Oro");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout mercadoPanelLayout = new javax.swing.GroupLayout(mercadoPanel);
         mercadoPanel.setLayout(mercadoPanelLayout);
@@ -65,6 +74,16 @@ public class MercadoJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    /**
+     * Veremos si descuenta el oro de la persona
+     * @param evt 
+     */
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        this.granjero.setOro((this.granjero.getOro()-10));
+        this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
+
+    }//GEN-LAST:event_jLabel1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

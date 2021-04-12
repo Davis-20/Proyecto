@@ -56,8 +56,10 @@ private ReportesJFrame reportes;
         this.granjero = granjero;
         this.filas = filas;
         this.columnas = columnas;
-        this.mercado = new MercadoJFrame();  //creo una ventana nueva para el mercado que se llamara despues
+        this.mercado = new MercadoJFrame(this.granjero);  //creo una ventana nueva para el mercado que se llamara despues
         this.reportes = new ReportesJFrame(this.granjero); //creo una ventana nueva para el reporte que se llamara despues
+        this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
+        
        
         
         
@@ -69,6 +71,7 @@ private ReportesJFrame reportes;
         this.granja = new Granja(filas,columnas);
         manejadorSuelo = new ManejadorSuelo(sueloPanel, granja.getSuelo(), filas,columnas); //filas 5 columnas 5
         nombreLabel.setText(this.granjero.getNombre());
+
     }
 
     /**
@@ -153,7 +156,9 @@ private ReportesJFrame reportes;
         int oroNuevo = this.granjero.getOro() - 5 ;
         System.out.println("Te desconte 5 de oro");
         this.granjero.setOro(oroNuevo);
-        
+        this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
+        //oroLabel.setText("Oro: "+ this.granjero.getOro());
+
         this.mercado.setVisible(true); // hago q el mercado aparezca jujujujuju
         
         
