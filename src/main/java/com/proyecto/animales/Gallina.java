@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * Clase gallina en ella definimos los metodos y parametros de la misma
  * @author davis
  */
-public class Gallina extends Animal implements Runnable{
+public class Gallina extends Animal implements Runnable, omnivo{
     /**
      * Constructor de la gallina
      * @param espacio int espacio

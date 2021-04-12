@@ -96,7 +96,7 @@ public class Granjero implements Runnable{
         while(getVida()!=0){
             int vidaNueva = getVida() - 1 ;
             setVida(vidaNueva);
-            getBotonJLabel().setText("Vida: \n\n"+getVida());
+            getBotonJLabel().setText("Vida: \n\n"+getVida()); //imprimimos la vida del granjero
             //getBotonJLabel1().setText("Oro: \n\n"+getOro()); //Esto es opcional, es solo para ver si actualizaba el oro, pero esolo puedo hacer sin necesidd de hilos
             try {
                 Thread.sleep(1000);

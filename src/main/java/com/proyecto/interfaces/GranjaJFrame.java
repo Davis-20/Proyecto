@@ -157,8 +157,6 @@ private ReportesJFrame reportes;
         System.out.println("Te desconte 5 de oro");
         this.granjero.setOro(oroNuevo);
         this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
-        //oroLabel.setText("Oro: "+ this.granjero.getOro());
-
         this.mercado.setVisible(true); // hago q el mercado aparezca jujujujuju
         
         
