@@ -32,6 +32,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="tiendaLabel" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="nombreLabel" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="reporteLabel" alignment="0" min="-2" pref="41" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="sueloPanel" max="32767" attributes="0"/>
@@ -45,7 +46,9 @@
               <Component id="nombreLabel" min="-2" pref="27" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="tiendaLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="47" pref="225" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <Component id="reporteLabel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="178" max="32767" attributes="0"/>
           </Group>
           <Component id="sueloPanel" max="32767" attributes="0"/>
       </Group>
@@ -79,6 +82,14 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Nick"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="reporteLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Info."/>
+      </Properties>
+      <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="reporteLabelMouseClicked"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

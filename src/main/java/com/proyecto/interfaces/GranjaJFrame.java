@@ -43,6 +43,8 @@ private Granjero granjero;
  */
 private MercadoJFrame mercado;
 
+private ReportesJFrame reportes;
+
 
     /**
      * Constructor de la granja
@@ -51,18 +53,22 @@ private MercadoJFrame mercado;
      * @param granjero granjero
      */
     public GranjaJFrame(int filas, int columnas, Granjero granjero) {
-        this.mercado = new MercadoJFrame();
         this.granjero = granjero;
         this.filas = filas;
         this.columnas = columnas;
+        this.mercado = new MercadoJFrame();  //creo una ventana nueva para el mercado que se llamara despues
+        this.reportes = new ReportesJFrame(this.granjero); //creo una ventana nueva para el reporte que se llamara despues
+       
+        
+        
         initComponents();
         this.setTitle("Granja");
-        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.sueloPanel.setLayout(new GridLayout(filas,columnas));
         
         this.granja = new Granja(filas,columnas);
         manejadorSuelo = new ManejadorSuelo(sueloPanel, granja.getSuelo(), filas,columnas); //filas 5 columnas 5
-        nombreLabel.setText(granjero.getNombre());
+        nombreLabel.setText(this.granjero.getNombre());
     }
 
     /**
@@ -77,6 +83,7 @@ private MercadoJFrame mercado;
         sueloPanel = new javax.swing.JPanel();
         tiendaLabel = new javax.swing.JLabel();
         nombreLabel = new javax.swing.JLabel();
+        reporteLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 500));
@@ -102,6 +109,13 @@ private MercadoJFrame mercado;
 
         nombreLabel.setText("Nick");
 
+        reporteLabel.setText("Info.");
+        reporteLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reporteLabelMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,7 +124,8 @@ private MercadoJFrame mercado;
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tiendaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(reporteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -121,7 +136,9 @@ private MercadoJFrame mercado;
                 .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(tiendaLabel)
-                .addGap(47, 225, Short.MAX_VALUE))
+                .addGap(31, 31, 31)
+                .addComponent(reporteLabel)
+                .addContainerGap(178, Short.MAX_VALUE))
             .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -133,20 +150,29 @@ private MercadoJFrame mercado;
      */
     private void tiendaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tiendaLabelMouseClicked
         System.out.println("Dirigido a la tienda");// Aqui iran los metodos para la tienda
-        int oroNuevo = granjero.getOro() - 5 ;
+        int oroNuevo = this.granjero.getOro() - 5 ;
         System.out.println("Te desconte 5 de oro");
-        granjero.setOro(oroNuevo);
+        this.granjero.setOro(oroNuevo);
         
         this.mercado.setVisible(true); // hago q el mercado aparezca jujujujuju
         
         
     }//GEN-LAST:event_tiendaLabelMouseClicked
+    /**
+     * LLamara al frame de reportes
+     * 
+     */
+    private void reporteLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reporteLabelMouseClicked
+        this.reportes.setVisible(true); //Hago mostrar el frame de repportes
+        
+    }//GEN-LAST:event_reporteLabelMouseClicked
 
     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel nombreLabel;
+    private javax.swing.JLabel reporteLabel;
     private javax.swing.JPanel sueloPanel;
     private javax.swing.JLabel tiendaLabel;
     // End of variables declaration//GEN-END:variables
