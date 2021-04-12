@@ -2,6 +2,7 @@
 package com.proyecto.persona;
 
 
+import com.proyecto.animales.Animal;
 import com.proyecto.interfaces.BotonJLabel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,13 +19,15 @@ public class Granjero implements Runnable{
     private String nombre;
     private BotonJLabel botonJLabel;
     private BotonJLabel botonJLabel1;
+    private Animal [] animales;
 
-    public Granjero(String nombre, BotonJLabel botonJLabel, BotonJLabel botonJLabel1) {
+    public Granjero(String nombre, BotonJLabel botonJLabel, BotonJLabel botonJLabel1, Animal[] animales) {
         this.oro = 500; //definimos el oro inicial
         this.vida = 100; //definimos la vida inicial
         this.nombre = nombre;
         this.botonJLabel = botonJLabel;
         this.botonJLabel1 = botonJLabel1;
+        this.animales = animales;
         
     }
 
@@ -92,6 +95,14 @@ public class Granjero implements Runnable{
 
     public void setBotonJLabel1(BotonJLabel botonJLabel1) {
         this.botonJLabel1 = botonJLabel1;
+    }
+
+    public Animal[] getAnimales() {
+        return animales;
+    }
+
+    public void setAnimales(Animal[] animales) {
+        this.animales = animales;
     }
     
 

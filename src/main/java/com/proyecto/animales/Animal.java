@@ -40,7 +40,6 @@ public abstract class Animal{
     public String toString() {
         return "Animal{" + "espacio=" + espacio + ", vida=" + vida + ", nombre=" + nombre + '}';
     }
-
     
     
     

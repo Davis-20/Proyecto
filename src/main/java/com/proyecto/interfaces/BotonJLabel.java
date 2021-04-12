@@ -7,6 +7,7 @@ package com.proyecto.interfaces;
 
 
 
+
 import javax.swing.JLabel;
 
 /**
@@ -15,11 +16,12 @@ import javax.swing.JLabel;
  */
 public class BotonJLabel extends JLabel{
 
+
     public BotonJLabel(String text) {
         super(text);
         
     }
-
+    
     
     
 }

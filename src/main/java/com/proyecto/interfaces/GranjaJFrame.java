@@ -22,6 +22,7 @@ private Granja granja;
 private int filas ;
 private int columnas ;
 private Granjero granjero;
+MercadoJFrame mercado = new MercadoJFrame();
 
     /**
      * Creates new form SueloJFrame
@@ -116,6 +117,8 @@ private Granjero granjero;
         int oroNuevo = granjero.getOro() - 5 ;
         System.out.println("Te desconte 5 de oro");
         granjero.setOro(oroNuevo);
+        
+        mercado.setVisible(true); // hago q el mercado aparezca jujujujuju
         
         
     }//GEN-LAST:event_tiendaLabelMouseClicked
