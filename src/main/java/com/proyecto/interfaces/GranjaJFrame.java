@@ -17,17 +17,41 @@ import javax.swing.WindowConstants;
  */
 
 public class GranjaJFrame extends javax.swing.JFrame {
+/**
+* Manejador suelo
+*/
 private ManejadorSuelo manejadorSuelo;
+/**
+ * Granja
+ */
 private Granja granja;
-private int filas ;
-private int columnas ;
+
+/**
+ * filas
+ */
+private int filas ; 
+/**
+ * columnas
+ */
+private int columnas ; 
+/**
+ * Granjero
+ */
 private Granjero granjero;
-MercadoJFrame mercado = new MercadoJFrame();
+/**
+ * MercadoJFrame
+ */
+private MercadoJFrame mercado;
+
 
     /**
-     * Creates new form SueloJFrame
+     * Constructor de la granja
+     * @param filas int filas
+     * @param columnas int columnas
+     * @param granjero granjero
      */
     public GranjaJFrame(int filas, int columnas, Granjero granjero) {
+        this.mercado = new MercadoJFrame();
         this.granjero = granjero;
         this.filas = filas;
         this.columnas = columnas;
@@ -55,7 +79,6 @@ MercadoJFrame mercado = new MercadoJFrame();
         nombreLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 500));
         setResizable(false);
 
         javax.swing.GroupLayout sueloPanelLayout = new javax.swing.GroupLayout(sueloPanel);
@@ -77,11 +100,6 @@ MercadoJFrame mercado = new MercadoJFrame();
         });
 
         nombreLabel.setText("Nick");
-        nombreLabel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nombreLabelMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -109,31 +127,22 @@ MercadoJFrame mercado = new MercadoJFrame();
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
-    //Agregar metodo para tienda
+    /**
+     * LLama al Frame de tienda
+     */
     private void tiendaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tiendaLabelMouseClicked
         System.out.println("Dirigido a la tienda");// Aqui iran los metodos para la tienda
         int oroNuevo = granjero.getOro() - 5 ;
         System.out.println("Te desconte 5 de oro");
         granjero.setOro(oroNuevo);
         
-        mercado.setVisible(true); // hago q el mercado aparezca jujujujuju
+        this.mercado.setVisible(true); // hago q el mercado aparezca jujujujuju
         
         
     }//GEN-LAST:event_tiendaLabelMouseClicked
 
     
-    
-    private void nombreLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombreLabelMouseClicked
-              // TODO add your handling code here:
-    }//GEN-LAST:event_nombreLabelMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel nombreLabel;

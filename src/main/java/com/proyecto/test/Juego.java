@@ -8,14 +8,15 @@ import com.proyecto.persona.Granjero;
 import com.proyecto.plantas.*;
 import com.proyecto.suelo.*;
 import javax.swing.JOptionPane;
-
+/**
+ * En esta clase se instanciaron los objetos para la creacion del juego
+ * @author davis
+ */
 public class Juego {
-        
-    
-    
-    
-    
-    
+
+    /**
+     * Aqui se instancian los objetos e hilos
+     */
     public void iniciarJuego(){
         //labels de inf de vida + oro
         BotonJLabel botonVida = new BotonJLabel("Vida");

@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 
 /**
- *
+ * Clase CreadorSuelo
  * @author davis
  */
 
@@ -20,8 +20,13 @@ public class CreadorSuelo {
 private static int contGrama = 0;
 private static int contAgua =0;
 private static int contDesierto =0;
-    
-    public static Suelo[][] CreadorSueloicial(int filas, int columnas){ //retorna una matriz de tipo suelo que va a contener los diferentes tipos de suelo //ojo es un metodo  no un consstructor
+    /**
+     * retorna una matriz de tipo suelo que va a contener los diferentes tipos de suelo //ojo es un metodo  no un consstructor
+     * @param filas int filas
+     * @param columnas int columnas
+     * @return array 2 dimensiones de tipo suelo
+     */
+    public static Suelo[][] CreadorSueloicial(int filas, int columnas){ 
 
         Suelo superficieSuelo;
         Suelo[][] suelo = new Suelo[filas][columnas];

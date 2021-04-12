@@ -10,7 +10,10 @@ package com.proyecto.suelo;
  * @author davis
  */
 public class SueloVacio extends TipoSuelo {
-
+    /**
+     * Constructor suelo vacio
+     * @param nombre nombre
+     */
     public SueloVacio(String nombre) {
         super(nombre);
     }
