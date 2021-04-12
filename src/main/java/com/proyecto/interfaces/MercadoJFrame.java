@@ -16,6 +16,7 @@ public class MercadoJFrame extends javax.swing.JFrame {
      */
     public MercadoJFrame() {
         initComponents();
+        
     }
 
     /**
@@ -38,17 +39,17 @@ public class MercadoJFrame extends javax.swing.JFrame {
         mercadoPanel.setLayout(mercadoPanelLayout);
         mercadoPanelLayout.setHorizontalGroup(
             mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mercadoPanelLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mercadoPanelLayout.createSequentialGroup()
+                .addContainerGap(135, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(135, Short.MAX_VALUE))
+                .addGap(110, 110, 110))
         );
         mercadoPanelLayout.setVerticalGroup(
             mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mercadoPanelLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(229, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

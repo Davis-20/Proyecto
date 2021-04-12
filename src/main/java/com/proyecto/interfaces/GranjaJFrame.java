@@ -79,6 +79,7 @@ private MercadoJFrame mercado;
         nombreLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 500));
         setResizable(false);
 
         javax.swing.GroupLayout sueloPanelLayout = new javax.swing.GroupLayout(sueloPanel);

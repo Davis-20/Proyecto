@@ -25,15 +25,14 @@ public class Granjero implements Runnable{
      * @param nombre Str nombre
      * @param botonJLabel Es elJlabel
      * @param botonJLabel1 Es elJlabel
-     * @param animales No por animal
      */
-    public Granjero(String nombre, BotonJLabel botonJLabel, BotonJLabel botonJLabel1, Animal[] animales) {
+    public Granjero(String nombre, BotonJLabel botonJLabel, BotonJLabel botonJLabel1) {
         this.oro = 500; //definimos el oro inicial
         this.vida = 100; //definimos la vida inicial
         this.nombre = nombre;
         this.botonJLabel = botonJLabel;
         this.botonJLabel1 = botonJLabel1;
-        this.animales = animales;
+
         
     }
     /**

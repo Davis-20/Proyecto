@@ -32,8 +32,9 @@ public class Juego {
         listaAnimales [0] = gallina1;
         
         //Hilo del la granja + granjero
-        Granjero granjero = new Granjero(JOptionPane.showInputDialog("Ingresa tu Nick"),botonVida,botonOro, listaAnimales);
-        System.out.println( granjero.getAnimales().getClass());
+        Granjero granjero = new Granjero(JOptionPane.showInputDialog("Ingresa tu Nick"),botonVida,botonOro);
+        granjero.setAnimales(listaAnimales);
+        System.out.println(granjero.getAnimales()[0].getNombre());
         GranjaJFrame nuevaGranja = new GranjaJFrame(7,5,granjero);
         nuevaGranja.setVisible(true);
         

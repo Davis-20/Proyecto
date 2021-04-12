@@ -33,7 +33,7 @@ public class Gallina extends Animal implements Runnable{
                 Logger.getLogger(Gallina.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        JOptionPane.showMessageDialog(null, "Gallina muerta");
+        JOptionPane.showMessageDialog(null, this.getNombre()+ " muerta");
     }
     
     
