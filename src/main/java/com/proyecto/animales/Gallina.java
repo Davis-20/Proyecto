@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * Clase gallina en ella definimos los metodos y parametros de la misma
  * @author davis
  */
-public class Gallina extends Animal implements Runnable, omnivo{
+public class Gallina extends Animal implements Runnable, Omnivoro{
     /**
      * Constructor de la gallina
      * @param espacio int espacio
@@ -34,6 +34,13 @@ public class Gallina extends Animal implements Runnable, omnivo{
             }
         }
         JOptionPane.showMessageDialog(null, this.getNombre()+ " muerta");
+    }
+    /**
+     * Metodo de la interfaz omnivoro
+     */
+    @Override
+    public void comeOmnivoro() {
+        System.out.println("Es omnivoro");
     }
     
     

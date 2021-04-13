@@ -9,6 +9,6 @@ package com.proyecto.animales;
  *
  * @author davis
  */
-public abstract class Herbivoro {
+public interface  Herbivoro {
     
 }
