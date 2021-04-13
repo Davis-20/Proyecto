@@ -16,15 +16,16 @@ public class Gallina extends Animal implements Runnable, Omnivoro{
      * @param vida int vida
      * @param nombre  str nombre
      */
-    public Gallina(double espacio, int vida, String nombre) {
-        super(espacio, vida, nombre);
+    public Gallina(String nombre) {
+        //espacio, vida, nombre
+        super(0.5, 105, nombre);
     }
     /**
      * Metodo del funcionamiento del hilo de la gallina, en el controlamos su vida
      */
     @Override
     public void run() {
-        JOptionPane.showMessageDialog(null, "Gallina creada");
+        JOptionPane.showMessageDialog(null, this.getNombre()+" creada");
         while(getVida()!=0){
             setVida((getVida()-1));
             try {

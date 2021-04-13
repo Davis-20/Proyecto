@@ -9,17 +9,23 @@ public class Planta  {
     private double precio;
     private int vida;
     private String nombre;
+    private String productoProducido;
+    
     /**
-     * Constructor de la planta
-     * @param precio precio
-     * @param vida vida
-     * @param nombre  nombre
+     * constructor de la planta
+     * @param precio int precio
+     * @param vida int vida
+     * @param nombre str nombre
+     * @param productoProducido str producto 
      */
-    public Planta(double precio, int vida, String nombre) {
+    public Planta(double precio, int vida, String nombre, String productoProducido) {
         this.precio = precio;
         this.vida = vida;
         this.nombre = nombre;
+        this.productoProducido = productoProducido;
     }
+    
+    
     /**
      * Devuelve precio
      * @return precio int
@@ -70,6 +76,20 @@ public class Planta  {
     @Override
     public String toString() {
         return "Planta{" + "precio=" + precio + ", vida=" + vida + ", nombre=" + nombre + '}';
+    }
+    /**
+     * Devuleve producto producido
+     * @return str producto
+     */
+    public String getProductoProducido() {
+        return productoProducido;
+    }
+    /**
+     * Define el producto producido
+     * @param productoProducido str producto producido
+     */
+    public void setProductoProducido(String productoProducido) {
+        this.productoProducido = productoProducido;
     }
 
   

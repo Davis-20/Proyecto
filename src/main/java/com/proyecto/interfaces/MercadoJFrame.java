@@ -6,6 +6,8 @@
 package com.proyecto.interfaces;
 
 import com.proyecto.persona.Granjero;
+import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 /**
  * Clase mercado
@@ -13,6 +15,7 @@ import com.proyecto.persona.Granjero;
  */
 public class MercadoJFrame extends javax.swing.JFrame {
 private Granjero granjero;
+
     /**
      * Constructor del mercado
      * @param granjero pasamos el objeto granjero
@@ -33,14 +36,52 @@ private Granjero granjero;
     private void initComponents() {
 
         mercadoPanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        maizLabel = new javax.swing.JLabel();
+        manzanoLabel = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        carneLabel = new javax.swing.JLabel();
+        huevoLabel = new javax.swing.JLabel();
+        lecheLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel1.setText("Descuento de 10 Oro");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel2.setText("Semillas");
+
+        maizLabel.setText("Maiz");
+        maizLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                maizLabelMouseClicked(evt);
+            }
+        });
+
+        manzanoLabel.setText("Manzano");
+        manzanoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manzanoLabelMouseClicked(evt);
+            }
+        });
+
+        jLabel3.setText("Alimentos");
+
+        carneLabel.setText("Carne");
+        carneLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                carneLabelMouseClicked(evt);
+            }
+        });
+
+        huevoLabel.setText("Huevo");
+        huevoLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                huevoLabelMouseClicked(evt);
+            }
+        });
+
+        lecheLabel.setText("Leche");
+        lecheLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lecheLabelMouseClicked(evt);
             }
         });
 
@@ -48,17 +89,44 @@ private Granjero granjero;
         mercadoPanel.setLayout(mercadoPanelLayout);
         mercadoPanelLayout.setHorizontalGroup(
             mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mercadoPanelLayout.createSequentialGroup()
-                .addContainerGap(135, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
+            .addGroup(mercadoPanelLayout.createSequentialGroup()
+                .addGroup(mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mercadoPanelLayout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(maizLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(manzanoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(mercadoPanelLayout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)))
+                    .addGroup(mercadoPanelLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(carneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(huevoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lecheLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(298, Short.MAX_VALUE))
         );
         mercadoPanelLayout.setVerticalGroup(
             mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mercadoPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addGap(24, 24, 24)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(carneLabel)
+                    .addComponent(huevoLabel)
+                    .addComponent(lecheLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(mercadoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(maizLabel)
+                    .addComponent(manzanoLabel))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -74,20 +142,113 @@ private Granjero granjero;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    /**
-     * Veremos si descuenta el oro de la persona
-     * @param evt 
+
+   /**
+     * Comprar carne precio 20 oro
      */
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+    private void carneLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_carneLabelMouseClicked
         // TODO add your handling code here:
-        this.granjero.setOro((this.granjero.getOro()-10));
+        String texto = JOptionPane.showInputDialog("Costo: 20 oro, Comprar(S/N)");
+        
+        if(texto.toLowerCase().equals("s")){
+//            for (int i = 0; i < this.granjero.getAlimentos().length; i++) {
+//                if(this.granjero.getAlimentos()[i] == null){
+//                    x = i;
+//                    break;
+//                }
+//            }
+//            String comida = this.granjero.getAlimentos()[x+1];
+//            this.granjero.setAlimentos(comida)[x+1];
+//           
+//            this.granjero.setAlimentos(alimentos);
+//            System.out.println(this.granjero.getAlimentos()[longitud+1]);
+            this.granjero.setOro((this.granjero.getOro()-20));
+            JOptionPane.showMessageDialog(null, "Compra Exitosa");
+        }
+        
+        
         this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
-
-    }//GEN-LAST:event_jLabel1MouseClicked
-
+    }//GEN-LAST:event_carneLabelMouseClicked
+    /**
+     * Comprar huevo precio 10 oro
+     */
+    private void huevoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_huevoLabelMouseClicked
+        // TODO add your handling code here:
+        String texto = JOptionPane.showInputDialog("Costo: 10 oro, Comprar(S/N)");
+        if(texto.toLowerCase().equals("s")){
+            this.granjero.setOro((this.granjero.getOro()-10));
+            JOptionPane.showMessageDialog(null, "Compra Exitosa");
+        }
+        
+        
+        this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
+    
+    }//GEN-LAST:event_huevoLabelMouseClicked
+    /**
+     * Comprar leche precio 10 oro
+     */
+    private void lecheLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lecheLabelMouseClicked
+        // TODO add your handling code here:
+        String texto = JOptionPane.showInputDialog("Costo: 10 oro, Comprar(S/N)");
+        if(texto.toLowerCase().equals("s")){
+            this.granjero.setOro((this.granjero.getOro()-10));
+            JOptionPane.showMessageDialog(null, "Compra Exitosa");
+        }
+        
+        
+        this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
+    }//GEN-LAST:event_lecheLabelMouseClicked
+    /**
+     * Comprar maiz precio 200 oro
+     */
+    private void maizLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maizLabelMouseClicked
+        // TODO add your handling code here:
+        String texto = JOptionPane.showInputDialog("Costo: 200 oro, Comprar(S/N)");
+        if(texto.toLowerCase().equals("s")){
+            this.granjero.setOro((this.granjero.getOro()-200));
+            JOptionPane.showMessageDialog(null, "Compra Exitosa");
+        }
+        
+        
+        this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
+    }//GEN-LAST:event_maizLabelMouseClicked
+    /**
+     * Comprar manzano precio 205 oro
+     */
+    private void manzanoLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manzanoLabelMouseClicked
+        // TODO add your handling code here:
+        String texto = JOptionPane.showInputDialog("Costo: 205 oro, Comprar(S/N)");
+        if(texto.toLowerCase().equals("s")){
+            this.granjero.setOro((this.granjero.getOro()-205));
+            JOptionPane.showMessageDialog(null, "Compra Exitosa");
+        }
+        
+        
+        this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
+    }//GEN-LAST:event_manzanoLabelMouseClicked
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel carneLabel;
+    private javax.swing.JLabel huevoLabel;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel lecheLabel;
+    private javax.swing.JLabel maizLabel;
+    private javax.swing.JLabel manzanoLabel;
     private javax.swing.JPanel mercadoPanel;
     // End of variables declaration//GEN-END:variables
 }

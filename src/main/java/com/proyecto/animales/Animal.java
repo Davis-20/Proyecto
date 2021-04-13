@@ -8,6 +8,7 @@ public abstract class Animal{
     private double espacio;
     private int vida;
     private String nombre;
+
     /**
      * Connstructor de la clase animal
      * @param espacio int espacio
@@ -19,6 +20,12 @@ public abstract class Animal{
         this.vida = vida;
         this.nombre = nombre;
     }
+
+
+    
+
+    
+    
     /**
      * Metodo que obtiene el espacio ocuapdo por un animal
      * @return int espacio
@@ -69,8 +76,7 @@ public abstract class Animal{
     public String toString() {
         return "Animal{" + "espacio=" + espacio + ", vida=" + vida + ", nombre=" + nombre + '}';
     }
-    
-    
+     
     
     
     

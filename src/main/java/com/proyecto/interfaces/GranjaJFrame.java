@@ -9,6 +9,7 @@ import com.proyecto.manejadores.ManejadorSuelo;
 import com.proyecto.persona.Granjero;
 import com.proyecto.suelo.Granja;
 import java.awt.GridLayout;
+import javax.swing.JOptionPane;
 import javax.swing.WindowConstants;
 
 /**
@@ -56,8 +57,8 @@ private ReportesJFrame reportes;
         this.granjero = granjero;
         this.filas = filas;
         this.columnas = columnas;
-        this.mercado = new MercadoJFrame(this.granjero);  //creo una ventana nueva para el mercado que se llamara despues
-        this.reportes = new ReportesJFrame(this.granjero); //creo una ventana nueva para el reporte que se llamara despues
+        this.mercado = new MercadoJFrame(this.granjero);  //se creo una ventana nueva para el mercado que se llamara despues
+        this.reportes = new ReportesJFrame(this.granjero); //se creo una ventana nueva para el reporte que se llamara despues
         this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
         
        
@@ -87,6 +88,7 @@ private ReportesJFrame reportes;
         tiendaLabel = new javax.swing.JLabel();
         nombreLabel = new javax.swing.JLabel();
         reporteLabel = new javax.swing.JLabel();
+        comerLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 500));
@@ -119,6 +121,13 @@ private ReportesJFrame reportes;
             }
         });
 
+        comerLabel.setText("Comer");
+        comerLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                comerLabelMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,7 +137,8 @@ private ReportesJFrame reportes;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tiendaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reporteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(reporteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(comerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -141,7 +151,9 @@ private ReportesJFrame reportes;
                 .addComponent(tiendaLabel)
                 .addGap(31, 31, 31)
                 .addComponent(reporteLabel)
-                .addContainerGap(178, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(comerLabel)
+                .addContainerGap(133, Short.MAX_VALUE))
             .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -153,9 +165,9 @@ private ReportesJFrame reportes;
      */
     private void tiendaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tiendaLabelMouseClicked
         System.out.println("Dirigido a la tienda");// Aqui iran los metodos para la tienda
-        int oroNuevo = this.granjero.getOro() - 5 ;
+        //int oroNuevo = this.granjero.getOro() - 5 ;
         System.out.println("Te desconte 5 de oro");
-        this.granjero.setOro(oroNuevo);
+        //this.granjero.setOro(oroNuevo);
         this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
         this.mercado.setVisible(true); // hago q el mercado aparezca jujujujuju
         
@@ -169,11 +181,25 @@ private ReportesJFrame reportes;
         this.reportes.setVisible(true); //Hago mostrar el frame de repportes
         
     }//GEN-LAST:event_reporteLabelMouseClicked
+    /**
+     * Metodo para q coma el granjero + 10 de vida por click
+     */
+    private void comerLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_comerLabelMouseClicked
+        // TODO add your handling code here:
+        if((this.granjero.getVida())<=90 && this.granjero.getVida()>0){
+            this.granjero.setVida(this.granjero.getVida()+10);
+            JOptionPane.showMessageDialog(null, "Ganaste 10 de vida");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No puedes comer");
+        }
+    }//GEN-LAST:event_comerLabelMouseClicked
 
     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel comerLabel;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel reporteLabel;
     private javax.swing.JPanel sueloPanel;

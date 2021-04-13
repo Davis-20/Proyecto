@@ -4,6 +4,7 @@ package com.proyecto.persona;
 
 import com.proyecto.animales.Animal;
 import com.proyecto.interfaces.BotonJLabel;
+import com.proyecto.plantas.Planta;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -20,6 +21,8 @@ public class Granjero implements Runnable{
     private BotonJLabel botonJLabel;
     private BotonJLabel botonJLabel1;
     private Animal [] animales;
+    private Planta[] plantas;
+    private String[] alimentos;
     /**
      * Constructor granjero
      * @param nombre Str nombre
@@ -32,6 +35,7 @@ public class Granjero implements Runnable{
         this.nombre = nombre;
         this.botonJLabel = botonJLabel;
         this.botonJLabel1 = botonJLabel1;
+        this.alimentos = new String[10];
 
         
     }
@@ -149,6 +153,34 @@ public class Granjero implements Runnable{
      */
     public void setAnimales(Animal[] animales) {
         this.animales = animales;
+    }
+    /**
+     * Devuelve el array plantas
+     * @return Devuleve array plantas
+     */
+    public Planta[] getPlantas() {
+        return plantas;
+    }
+    /**
+     * Define el array plantas
+     * @param plantas Define array
+     */
+    public void setPlantas(Planta[] plantas) {
+        this.plantas = plantas;
+    }
+    /**
+     * Devuelve array alimentos
+     * @return array atr
+     */
+    public String[] getAlimentos() {
+        return alimentos;
+    }
+    /**
+     * Define array alimentos
+     * @param alimentos str array
+     */
+    public void setAlimentos(String[] alimentos) {
+        this.alimentos = alimentos;
     }
     
 

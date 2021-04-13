@@ -109,5 +109,6 @@ private static int contDesierto =0;
         return suelo;
     
     } 
+    //aqui agregaria los metodos para pescar, sembrar, criar
 
 }

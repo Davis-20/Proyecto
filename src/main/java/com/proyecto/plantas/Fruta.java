@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.proyecto.animales;
+package com.proyecto.plantas;
 
 /**
  *
  * @author davis
  */
-public interface  Herbivoro {
-    public void esHerbivoro();
+public interface Fruta {
+    
 }
