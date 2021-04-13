@@ -10,5 +10,8 @@ package com.proyecto.animales;
  * @author davis
  */
 public interface  Omnivoro{
+    /**
+     * Es omnivoro
+     */
     public abstract void comeOmnivoro();
 }

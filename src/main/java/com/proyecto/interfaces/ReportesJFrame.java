@@ -15,7 +15,8 @@ import com.proyecto.persona.Granjero;
 public class ReportesJFrame extends javax.swing.JFrame {
 private Granjero granjero;
     /**
-     * Creates new form Reportes
+     * Reportes partida
+     * @param granjero objeto granjero
      */
     public ReportesJFrame(Granjero granjero) {
         this.granjero = granjero;
@@ -72,8 +73,8 @@ private Granjero granjero;
                     .addComponent(animalLabel)
                     .addComponent(partidaLabel)
                     .addComponent(plantasLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(textoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(textoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 219, Short.MAX_VALUE)
                 .addGap(16, 16, 16))
         );
         jPanel1Layout.setVerticalGroup(
@@ -145,32 +146,37 @@ private Granjero granjero;
     private javax.swing.JLabel plantasLabel;
     private javax.swing.JLabel textoLabel;
     // End of variables declaration//GEN-END:variables
+    
     /**
-     * Este metodo devolvera el texto 1     
-     * @return regresa el texto 1
+     * Este metodo devolvera el texto 1  
+     * @param granjero objeto granjero
+     * @return texto1
      */
     public String getTexto1(Granjero granjero){
         this.granjero = granjero;
         
-        return "Nombre del granjero:" + this.granjero.getNombre();
+        return "Nombre: " + this.granjero.getNombre() + " Tiempo P: " + this.granjero.getTiempo()+" seg";
     }
     /**
-     * Este metodo devolvera el texto 2
-     * @return regresa el texto 2
+     * Este metodo devolvera el texto 2 
+     * @param granjero objeto granjero
+     * @return texto2
      */
     public String getTexto2(Granjero granjero){
         this.granjero = granjero;
         
-        return "Nombre del animal: " + this.granjero.getAnimales()[0].getNombre();
+        return "Cantidad animales comprados: " + this.granjero.getPlantas().length;//.getNombre();;
     }
     /**
-     * Este metodo devolvera el texto 3
-     * @return regresa el texto 3
+     * Este metodo devolvera el texto 3  
+     * @param granjero objeto granjero
+     * @return texto3
      */
     public String getTexto3(Granjero granjero){
         this.granjero = granjero;
         
-        return "Nombre del animal: " + this.granjero.getAnimales()[0].getNombre();
+        
+        return "Cantidad Semillas compradas: " + this.granjero.getPlantas().length;//.getNombre();
     }
 
 }

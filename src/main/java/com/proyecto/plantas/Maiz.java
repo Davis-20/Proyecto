@@ -13,8 +13,6 @@ public class Maiz extends Planta implements Runnable{
 
     /**
      * Clase maiz
-     * @param precio int precio
-     * @param vida int vida
      * @param nombre  str nombre
      */
     public Maiz(String nombre) {

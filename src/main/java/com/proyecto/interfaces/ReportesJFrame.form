@@ -45,8 +45,8 @@
                       <Component id="partidaLabel" min="-2" max="-2" attributes="0"/>
                       <Component id="plantasLabel" alignment="0" min="-2" pref="109" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="50" max="32767" attributes="0"/>
-                  <Component id="textoLabel" min="-2" pref="187" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="textoLabel" pref="219" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
           </Group>

@@ -11,9 +11,7 @@ import javax.swing.JOptionPane;
  */
 public class Vaca extends Animal implements Herbivoro, Runnable{
     /**
-     * Constructor de vaca
-     * @param espacio int espacio
-     * @param vida int vida
+     * Constructor vaca
      * @param nombre str nombre
      */
     public Vaca(String nombre) {

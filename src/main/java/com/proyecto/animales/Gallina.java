@@ -12,8 +12,6 @@ import javax.swing.JOptionPane;
 public class Gallina extends Animal implements Runnable, Omnivoro{
     /**
      * Constructor de la gallina
-     * @param espacio int espacio
-     * @param vida int vida
      * @param nombre  str nombre
      */
     public Gallina(String nombre) {

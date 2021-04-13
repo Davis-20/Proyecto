@@ -48,8 +48,8 @@ public class Juego {
         
         //granjero + paso de lista de animales, plantas
         Granjero granjero = new Granjero(JOptionPane.showInputDialog("Ingresa tu Nick"),botonVida,botonOro);
-        granjero.setAnimales(listaAnimales);
-        granjero.setPlantas(listaPlantas);
+        //granjero.setAnimales(listaAnimales);
+        //granjero.setPlantas(listaPlantas);
 
 
         //System.out.println(granjero.getAnimales()[0].getNombre());

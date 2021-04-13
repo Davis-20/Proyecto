@@ -45,6 +45,7 @@ private Granjero granjero;
 private MercadoJFrame mercado;
 
 private ReportesJFrame reportes;
+private Bodega bodega;
 
 
     /**
@@ -59,6 +60,7 @@ private ReportesJFrame reportes;
         this.columnas = columnas;
         this.mercado = new MercadoJFrame(this.granjero);  //se creo una ventana nueva para el mercado que se llamara despues
         this.reportes = new ReportesJFrame(this.granjero); //se creo una ventana nueva para el reporte que se llamara despues
+        this.bodega = new Bodega(this.granjero);
         this.granjero.getBotonJLabel1().setText("Oro: "+ this.granjero.getOro());
         
        
@@ -89,6 +91,7 @@ private ReportesJFrame reportes;
         nombreLabel = new javax.swing.JLabel();
         reporteLabel = new javax.swing.JLabel();
         comerLabel = new javax.swing.JLabel();
+        bodegaLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(600, 500));
@@ -128,6 +131,13 @@ private ReportesJFrame reportes;
             }
         });
 
+        bodegaLabel.setText("Bodega");
+        bodegaLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bodegaLabelMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,7 +148,8 @@ private ReportesJFrame reportes;
                     .addComponent(tiendaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nombreLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(reporteLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(comerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bodegaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -153,7 +164,9 @@ private ReportesJFrame reportes;
                 .addComponent(reporteLabel)
                 .addGap(29, 29, 29)
                 .addComponent(comerLabel)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(bodegaLabel)
+                .addContainerGap(90, Short.MAX_VALUE))
             .addComponent(sueloPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -194,11 +207,20 @@ private ReportesJFrame reportes;
             JOptionPane.showMessageDialog(null, "No puedes comer");
         }
     }//GEN-LAST:event_comerLabelMouseClicked
+    /**
+     * Me dirigira a la bodega
+     * @param evt 
+     */
+    private void bodegaLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bodegaLabelMouseClicked
+        // TODO add your handling code here:
+        this.bodega.setVisible(true);
+    }//GEN-LAST:event_bodegaLabelMouseClicked
 
     
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bodegaLabel;
     private javax.swing.JLabel comerLabel;
     private javax.swing.JLabel nombreLabel;
     private javax.swing.JLabel reporteLabel;

@@ -13,8 +13,6 @@ import javax.swing.JOptionPane;
 public class Manzano extends Planta implements Runnable{
     /**
      * Constructor Manzano
-     * @param precio precio int
-     * @param vida vida int
      * @param nombre str nombre
      */
     public Manzano(String nombre) {

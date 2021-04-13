@@ -23,6 +23,7 @@ public class Granjero implements Runnable{
     private Animal [] animales;
     private Planta[] plantas;
     private String[] alimentos;
+    private int tiempo;
     /**
      * Constructor granjero
      * @param nombre Str nombre
@@ -35,7 +36,9 @@ public class Granjero implements Runnable{
         this.nombre = nombre;
         this.botonJLabel = botonJLabel;
         this.botonJLabel1 = botonJLabel1;
-        this.alimentos = new String[10];
+        this.alimentos = new String[0];
+        this.plantas = new Planta[0];
+        this.tiempo = 0;
 
         
     }
@@ -98,7 +101,9 @@ public class Granjero implements Runnable{
     @Override
     public void run(){
         while(getVida()!=0){
-            int vidaNueva = getVida() - 1 ;
+            int vidaNueva = getVida() - 1 ; //Vida
+            int tiempoNuevo = getTiempo() +1; //Tiempo
+            setTiempo(tiempoNuevo);
             setVida(vidaNueva);
             getBotonJLabel().setText("Vida: \n\n"+getVida()); //imprimimos la vida del granjero
             //getBotonJLabel1().setText("Oro: \n\n"+getOro()); //Esto es opcional, es solo para ver si actualizaba el oro, pero esolo puedo hacer sin necesidd de hilos
@@ -181,6 +186,20 @@ public class Granjero implements Runnable{
      */
     public void setAlimentos(String[] alimentos) {
         this.alimentos = alimentos;
+    }
+    /**
+     * Retorna el tiempo
+     * @return int tiempo
+     */
+    public int getTiempo() {
+        return tiempo;
+    }
+    /**
+     * Define el tiempo
+     * @param tiempo  int tiempo
+     */
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
     }
     
 
